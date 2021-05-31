@@ -19,10 +19,18 @@ static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
+static const unsigned int baralpha = 0xd0;
+static const unsigned int borderalpha = OPAQUE;
+
 static const char *colors[][3]      = {
 	/*               fg           bg           border   */
 	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
 	[SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor },
+};
+static const unsigned int alphas[][3]      = {
+	/*               fg      bg        border     */
+	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 
 /* tagging */
@@ -39,6 +47,7 @@ static const Rule rules[] = {
   { "discord", NULL,     NULL,           1 << 8,    0,          0,          0          -1 },
   { "Steam",   NULL,     NULL,           1 << 7,    0,          0,          0,         -1 },
   { "qBittorrent", NULL, NULL,           1 << 6,    0,          0,          0,         -1 },
+  { "KeePassXC", NULL,   NULL,           1 << 5,    0,          0,          0,         -1 },
 	{ NULL,      NULL, "Event Tester",     0,         0,          0,          1,         -1 }, /* xev */
 };
 

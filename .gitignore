@@ -1,0 +1,7 @@
+dwm
+*.o
+*.gz
+
+*.diff
+
+.ccls-cache/

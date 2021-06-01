@@ -23,14 +23,24 @@ static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 
 static const char *colors[][3]      = {
-	/*               fg           bg           border   */
-	[SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-	[SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor },
+	/*               fg                 bg           border   */
+	[SchemeNorm]      = { normfgcolor,  normbgcolor, normbordercolor },
+	[SchemeSel]       = { selfgcolor,   selbgcolor,  selbordercolor },
+  [SchemeStatus]    = { normfgcolor,  normbgcolor, "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
+  [SchemeTagsSel]   = { selfgcolor,   selbgcolor,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
+  [SchemeTagsNorm]  = { normfgcolor,  normbgcolor, "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
+  [SchemeInfoSel]   = { normfgcolor,  normbgcolor, "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
+  [SchemeInfoNorm]  = { normfgcolor,  normbgcolor, "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 static const unsigned int alphas[][3]      = {
-	/*               fg      bg        border     */
-	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
-	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+	/*                fg          bg        border     */
+	[SchemeNorm]      = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel]       = { OPAQUE, baralpha, borderalpha },
+	[SchemeStatus]    = { OPAQUE, baralpha, borderalpha },
+	[SchemeTagsSel]   = { OPAQUE, baralpha, borderalpha },
+	[SchemeTagsNorm]  = { OPAQUE, baralpha, borderalpha },
+	[SchemeInfoSel]   = { OPAQUE, baralpha, borderalpha },
+	[SchemeInfoNorm]  = { OPAQUE, baralpha, borderalpha },
 };
 
 /* tagging */
